@@ -46,7 +46,6 @@ const images = [
 			<div class="carousel-indicators">
 			  {images.map((_, index) => (
 				<button
-				  key={index}
 				  type="button"
 				  data-bs-target="#carouselExampleIndicators"
 				  data-bs-slide-to={index}
@@ -59,7 +58,7 @@ const images = [
   
 			<div class="carousel-inner">
 			  {images.map((image, index) => (
-				<div key={index} class={`carousel-item ${index === 0 ? "active" : ""}`}>
+				<div class={`carousel-item ${index === 0 ? "active" : ""}`}>
 				  <img src={image} class="d-block w-screen h-128 md:h-screen object-contain" alt={`Slide ${index + 1}`} loading="eager"/>
 				</div>
 			  ))}
@@ -71,7 +70,6 @@ const images = [
 			<div class="carousel-indicators">
 			  {horizontalImages.map((_, index) => (
 				<button
-				  key={index}
 				  type="button"
 				  data-bs-target="#carouselHorizontal"
 				  data-bs-slide-to={index}
@@ -84,7 +82,7 @@ const images = [
   
 			<div class="carousel-inner">
 			  {horizontalImages.map((image, index) => (
-				<div key={index} class={`carousel-item ${index === 0 ? "active" : ""}`}>
+				<div class={`carousel-item ${index === 0 ? "active" : ""}`}>
 				  <img src={image} class="d-block w-screen h-96 object-contain" alt={`Slide ${index + 1}`} loading="eager"/>
 				</div>
 			  ))}
@@ -95,3 +93,9 @@ const images = [
 	</body>
   </html>
 </Layout>
+
+<style>
+	body {
+	  font-family: 'Playfair Display', serif;
+	}
+  </style>

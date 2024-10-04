@@ -6,7 +6,6 @@ const title = "CV"; // Meta title for the page
 
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
     <meta name="description" content="Caja Boogers CV" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
@@ -15,7 +14,7 @@ const title = "CV"; // Meta title for the page
 
   <body>
     <div class="container mx-auto py-16">
-      <h1 class="text-4xl font-bold mb-8 text-center">CV</h1>
+      <h1 class="text-4xl font-bold mb-8 text-center sr-only">CV</h1>
 
       {/* Flex container for layout on larger screens */}
       <div class="flex flex-col lg:flex-row">
@@ -130,8 +129,3 @@ const title = "CV"; // Meta title for the page
     </Layout>
 </html>
 
-<style is:global>
-  body {
-    font-family: 'Inter', sans-serif;
-  }
-</style>
