@@ -15,6 +15,7 @@ const { title } = Astro.props;
 <!doctype html>
 <html lang="en">
 	<head>
+		<meta charset="UTF-8"> 
 		<meta name="description" content="Caja Boogers official website." />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
@@ -33,9 +34,9 @@ const { title } = Astro.props;
 				)}
 			  </a>
 			  <div class="flex items-center space-x-4">
-				<a href="/work" class="hover:underline">
+				<!-- <a href="/work" class="hover:underline">
 				  Work
-				</a>
+				</a> -->
 				<a href="/cv" class="hover:underline">
 				  CV
 				</a>
@@ -61,7 +62,7 @@ const { title } = Astro.props;
 	</body>
 	<footer class="bg-white text-gray-500 text-center p-4">
 		<p>
-			(c) Caja Boogers {new Date().getFullYear()}.
+			&copy; Caja Boogers {new Date().getFullYear()}.
 			Website by{" "}
 		  <a
 			href="https://daamn.nl"
