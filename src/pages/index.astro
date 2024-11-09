@@ -83,21 +83,11 @@ const plain2Images = [];
   <Layout title="Caja Boogers">
     <body>
       <div class="min-h-screen flex flex-col">
-        <img
-          src="https://utfs.io/f/eySWb67X0LypH3VN2kbpSQlyWpGw2JPZeaEqmcL1fFsOBC0d"
-          alt="Caja Boogers"
-          class="w-24 h-24 md:w-32 md:h-32 object-cover self-center mb-1 md:mb-12"
-        />
         <h1 class="sr-only">Caja Boogers home page</h1>
         <section id="home" class="min-h-screen flex flex-col">
           <main class="flex-grow container mx-auto py-8 md:py-16">
             <!-- Carousel for Asfar Images -->
-            <div
-              id="carouselAsfar"
-              class="carousel slide mb-16 md:mb-32"
-              data-bs-ride="carousel"
-              data-bs-interval="3000"
-            >
+            <div id="carouselAsfar" class="carousel slide mb-16 md:mb-32">
               <div class="carousel-indicators">
                 {
                   asfarImages.map((_, index) => (
@@ -127,15 +117,30 @@ const plain2Images = [];
                   ))
                 }
               </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselAsfar"
+                data-bs-slide="prev"
+              >
+                <span class="carousel-control-prev-icon" aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselAsfar"
+                data-bs-slide="next"
+              >
+                <span class="carousel-control-next-icon" aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
 
             <!-- Carousel for Boek Images -->
-            <div
-              id="carouselBoek"
-              class="carousel slide mb-16 md:mb-32"
-              data-bs-ride="carousel"
-              data-bs-interval="3000"
-            >
+            <div id="carouselBoek" class="carousel slide mb-16 md:mb-32">
               <div class="carousel-indicators">
                 {
                   boekImages.map((_, index) => (
@@ -165,15 +170,30 @@ const plain2Images = [];
                   ))
                 }
               </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselBoek"
+                data-bs-slide="prev"
+              >
+                <span class="carousel-control-prev-icon" aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselBoek"
+                data-bs-slide="next"
+              >
+                <span class="carousel-control-next-icon" aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
 
             <!-- Carousel for I Know Images -->
-            <div
-              id="carouselIKnow"
-              class="carousel slide mb-16 md:mb-32"
-              data-bs-ride="carousel"
-              data-bs-interval="3000"
-            >
+            <div id="carouselIKnow" class="carousel slide mb-16 md:mb-32">
               <div class="carousel-indicators">
                 {
                   iknowImages.map((_, index) => (
@@ -203,15 +223,30 @@ const plain2Images = [];
                   ))
                 }
               </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselIKnow"
+                data-bs-slide="prev"
+              >
+                <span class="carousel-control-prev-icon" aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselIKnow"
+                data-bs-slide="next"
+              >
+                <span class="carousel-control-next-icon" aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
 
             <!-- Carousel for Retelling Images -->
-            <div
-              id="carouselRetelling"
-              class="carousel slide mb-16 md:mb-32"
-              data-bs-ride="carousel"
-              data-bs-interval="3000"
-            >
+            <div id="carouselRetelling" class="carousel slide mb-16 md:mb-32">
               <div class="carousel-indicators">
                 {
                   retellingImages.map((_, index) => (
@@ -241,15 +276,30 @@ const plain2Images = [];
                   ))
                 }
               </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselRetelling"
+                data-bs-slide="prev"
+              >
+                <span class="carousel-control-prev-icon" aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselRetelling"
+                data-bs-slide="next"
+              >
+                <span class="carousel-control-next-icon" aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
 
             <!-- Carousel for Lift Images -->
-            <div
-              id="carouselLift"
-              class="carousel slide mb-16 md:mb-32"
-              data-bs-ride="carousel"
-              data-bs-interval="3000"
-            >
+            <div id="carouselLift" class="carousel slide mb-16 md:mb-32">
               <div class="carousel-indicators">
                 {
                   liftImages.map((_, index) => (
@@ -279,15 +329,30 @@ const plain2Images = [];
                   ))
                 }
               </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselLift"
+                data-bs-slide="prev"
+              >
+                <span class="carousel-control-prev-icon" aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselLift"
+                data-bs-slide="next"
+              >
+                <span class="carousel-control-next-icon" aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
 
             <!-- Carousel for Plain Images -->
-            <div
-              id="carouselPlain"
-              class="carousel slide mb-16 md:mb-32"
-              data-bs-ride="carousel"
-              data-bs-interval="3000"
-            >
+            <div id="carouselPlain" class="carousel slide mb-16 md:mb-32">
               <div class="carousel-indicators">
                 {
                   plainImages.map((_, index) => (
@@ -317,45 +382,27 @@ const plain2Images = [];
                   ))
                 }
               </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselPlain"
+                data-bs-slide="prev"
+              >
+                <span class="carousel-control-prev-icon" aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselPlain"
+                data-bs-slide="next"
+              >
+                <span class="carousel-control-next-icon" aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
-
-            <!-- Carousel for Plain2 Images
-          <div
-            id="carouselPlain2"
-            class="carousel slide mb-16 md:mb-32"
-            data-bs-ride="carousel"
-            data-bs-interval="3000"
-          >
-            <div class="carousel-indicators">
-              {
-                plain2Images.map((_, index) => (
-                  <button
-                    type="button"
-                    data-bs-target="#carouselPlain2"
-                    data-bs-slide-to={index}
-                    class={index === 0 ? "active" : ""}
-                    aria-current={index === 0 ? "true" : "false"}
-                    aria-label={`Slide ${index + 1}`}
-                  />
-                ))
-              }
-            </div>
-
-            <div class="carousel-inner">
-              {
-                plain2Images.map((image, index) => (
-                  <div class={`carousel-item ${index === 0 ? "active" : ""}`}>
-                    <img
-                      src={image}
-                      class="d-block w-screen h-128 md:h-screen object-contain"
-                      alt={`Slide ${index + 1}`}
-                      loading="lazy"
-                    />
-                  </div>
-                ))
-              }
-            </div>
-          </div> -->
           </main>
         </section>
 
