@@ -1,107 +1,638 @@
 ---
-import FullscreenImageGrid from '../components/FullscreenImageGrid';
-import Layout from '../layouts/Layout.astro';
+import FullscreenImageGrid from "../components/FullscreenImageGrid";
+import Layout from "../layouts/Layout.astro";
 
+//oude images
 const images = [
-    "https://utfs.io/f/eySWb67X0Lyp06tqAKOoFskcentRjDfzZqm5SpiNC1uWL8KO",
-    "https://utfs.io/f/eySWb67X0Lypz9OB5oPCaF8RvUCB0tN634gbfqj7HMh1AGle",
-    "https://utfs.io/f/eySWb67X0Lyp06tqAKOoFskcentRjDfzZqm5SpiNC1uWL8KO",
-    "https://utfs.io/f/eySWb67X0LypP7DfzRvuMfsP9meCikWV7y4zE362LJuwB1Gr",
-    "https://utfs.io/f/eySWb67X0LypJaPGauNB2PFycf69kAahM1C3nHv5OS0EGZgU",
-    "https://utfs.io/f/eySWb67X0Lyp9YInoDVaARJtPO80QKBriNSybFDG6vcoeqHY",
-    "https://utfs.io/f/eySWb67X0Lyp6lq5PtkicNopfLslVa40TIF7YGeuC53mrjAb",
-  ];
-  const horizontalImages = [
-      "https://utfs.io/f/eySWb67X0Lypz93Vr7UCaF8RvUCB0tN634gbfqj7HMh1AGle",
-      "https://utfs.io/f/eySWb67X0Lyp5FT5uqR2cnSmpy6Z0zvF1gkUTRWjtPAJq3eL",
-      "https://utfs.io/f/eySWb67X0LypBZYYePqLxQ1WI7oSb5K2gjftRFvrwceZp04A",
-      "https://utfs.io/f/eySWb67X0LypjhASZh8nw1XaegZqAUHVMdKl8cvCm2I0hzDE",
-      "https://utfs.io/f/eySWb67X0LypLA9v38En8VDKUXhIWk07SMraAEjvOGwtLlcC",
-      "https://utfs.io/f/eySWb67X0LypMn0rk8SBzOhsCAbi4jtNuIvaeqSkW3cGLVMr",
-  ];
+  "https://utfs.io/f/eySWb67X0Lyp06tqAKOoFskcentRjDfzZqm5SpiNC1uWL8KO",
+  "https://utfs.io/f/eySWb67X0Lypz9OB5oPCaF8RvUCB0tN634gbfqj7HMh1AGle",
+  "https://utfs.io/f/eySWb67X0Lyp06tqAKOoFskcentRjDfzZqm5SpiNC1uWL8KO",
+  "https://utfs.io/f/eySWb67X0LypP7DfzRvuMfsP9meCikWV7y4zE362LJuwB1Gr",
+  "https://utfs.io/f/eySWb67X0LypJaPGauNB2PFycf69kAahM1C3nHv5OS0EGZgU",
+  "https://utfs.io/f/eySWb67X0Lyp9YInoDVaARJtPO80QKBriNSybFDG6vcoeqHY",
+  "https://utfs.io/f/eySWb67X0Lyp6lq5PtkicNopfLslVa40TIF7YGeuC53mrjAb",
+];
+const horizontalImages = [
+  "https://utfs.io/f/eySWb67X0Lypz93Vr7UCaF8RvUCB0tN634gbfqj7HMh1AGle",
+  "https://utfs.io/f/eySWb67X0Lyp5FT5uqR2cnSmpy6Z0zvF1gkUTRWjtPAJq3eL",
+  "https://utfs.io/f/eySWb67X0LypBZYYePqLxQ1WI7oSb5K2gjftRFvrwceZp04A",
+  "https://utfs.io/f/eySWb67X0LypjhASZh8nw1XaegZqAUHVMdKl8cvCm2I0hzDE",
+  "https://utfs.io/f/eySWb67X0LypLA9v38En8VDKUXhIWk07SMraAEjvOGwtLlcC",
+  "https://utfs.io/f/eySWb67X0LypMn0rk8SBzOhsCAbi4jtNuIvaeqSkW3cGLVMr",
+];
 
+// nieuwe images
+const asfarImages = [
+  "https://utfs.io/f/6qqAt6GVvZygiqrrbM5ZmRvX4W3kcCnufVOJYyGNi7DoBIMp",
+  "https://utfs.io/f/6qqAt6GVvZygCoSWZlf4qvxgdmUFH8aw21WZLyzpoSkrenl9",
+  "https://utfs.io/f/6qqAt6GVvZygTptSqkizBYGTov7s6kZ1X9QhaRUCfgMNetDH",
+];
+
+const boekImages = [
+  "https://utfs.io/f/6qqAt6GVvZyg8EI8jITEDBgkQpqRIHyJAMt318cvhPGxnF56",
+  "https://utfs.io/f/6qqAt6GVvZygSEwlZP6aauPM19Nl8mUzQOJdRBD0ctiW5fAF",
+  "https://utfs.io/f/6qqAt6GVvZygSEwlZP6aauPM19Nl8mUzQOJdRBD0ctiW5fAF",
+  "https://utfs.io/f/6qqAt6GVvZygSEwlZP6aauPM19Nl8mUzQOJdRBD0ctiW5fAF",
+  "https://utfs.io/f/6qqAt6GVvZygSEwlZP6aauPM19Nl8mUzQOJdRBD0ctiW5fAF",
+  "https://utfs.io/f/6qqAt6GVvZygSEwlZP6aauPM19Nl8mUzQOJdRBD0ctiW5fAF",
+];
+
+const iknowImages = [
+  "https://utfs.io/f/6qqAt6GVvZygndRxoBXAzdK0e2LD15yFh9BCXcT4NH7a6O3E",
+  "https://utfs.io/f/6qqAt6GVvZygDsS94qIOSBclqUjyhYKCri3kfab6gFGLRxwH",
+  "https://utfs.io/f/6qqAt6GVvZygGYhhZzVARfdQICqZj6lWOzF5gDmo90VKSN3e",
+  "https://utfs.io/f/6qqAt6GVvZyger1I8vhwSyKFj56kqm4oUPQJLZ3Rc2u0MA1G",
+];
+
+const retellingImages = [
+  "https://utfs.io/f/6qqAt6GVvZygetg082wSyKFj56kqm4oUPQJLZ3Rc2u0MA1GN",
+  "https://utfs.io/f/6qqAt6GVvZygVfKKEkUcVgpWOjbQkLizS8R4CyUxZPaX7Kcd",
+];
+
+const liftImages = [
+  "https://utfs.io/f/6qqAt6GVvZygJxc357SuMbxeGYpwID3oLTEOigWZ6XtyrF0K",
+  "https://utfs.io/f/6qqAt6GVvZygDr3643qIOSBclqUjyhYKCri3kfab6gFGLRxw",
+  "https://utfs.io/f/6qqAt6GVvZygFY7WUadkjfs4iYZGvSTEX71pPNFtxohRQarB",
+  "https://utfs.io/f/6qqAt6GVvZyg8ZiQkg5TEDBgkQpqRIHyJAMt318cvhPGxnF5",
+];
+
+const plainImages = [
+  "https://utfs.io/f/6qqAt6GVvZyg7GKLHDPhLSlV2tZGfDOnIEKF7dWB14HgubJQ",
+  "https://utfs.io/f/6qqAt6GVvZygnhoIwWXAzdK0e2LD15yFh9BCXcT4NH7a6O3E",
+];
+
+const plain2Images = [];
 ---
 
 <html lang="en">
   <head>
     <title>Caja Boogers</title>
-    <meta name="description" content="Caja Boogers (Vlaardingen, 2001) official website.">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" async></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta
+      name="description"
+      content="Caja Boogers (Vlaardingen, 2001) official website."
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      async></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
   </head>
 
-	<Layout title="Caja Boogers" >
+  <Layout title="Caja Boogers">
+    <body>
+      <div class="min-h-screen flex flex-col">
+        <img
+          src="https://utfs.io/f/eySWb67X0LypH3VN2kbpSQlyWpGw2JPZeaEqmcL1fFsOBC0d"
+          alt="Caja Boogers"
+          class="w-24 h-24 md:w-32 md:h-32 object-cover self-center mb-1 md:mb-12"
+        />
+        <h1 class="sr-only">Caja Boogers home page</h1>
+        <section id="home" class="min-h-screen flex flex-col">
+          <main class="flex-grow container mx-auto py-8 md:py-16">
+            <!-- Carousel for Asfar Images -->
+            <div
+              id="carouselAsfar"
+              class="carousel slide mb-16 md:mb-32"
+              data-bs-ride="carousel"
+              data-bs-interval="3000"
+            >
+              <div class="carousel-indicators">
+                {
+                  asfarImages.map((_, index) => (
+                    <button
+                      type="button"
+                      data-bs-target="#carouselAsfar"
+                      data-bs-slide-to={index}
+                      class={index === 0 ? "active" : ""}
+                      aria-current={index === 0 ? "true" : "false"}
+                      aria-label={`Slide ${index + 1}`}
+                    />
+                  ))
+                }
+              </div>
 
-	<body>
-	  <div class="min-h-screen flex flex-col">
-		<img
-		  src="https://utfs.io/f/eySWb67X0LypH3VN2kbpSQlyWpGw2JPZeaEqmcL1fFsOBC0d"
-		  alt="Caja Boogers"
-		  class="w-24 h-24 md:w-32 md:h-32 object-cover self-center mb-1 md:mb-12"
-		/>
-		<h1 class="sr-only">Caja Boogers home page</h1>
-  
-		<main class="flex-grow container mx-auto py-8 md:py-16">
-		  <!-- Bootstrap Carousel - Main Images -->
-		  <div id="carouselExampleIndicators" class="carousel slide mb-16 md:mb-32" data-bs-ride="carousel" data-bs-interval="3000">
-			<div class="carousel-indicators">
-			  {images.map((_, index) => (
-				<button
-				  type="button"
-				  data-bs-target="#carouselExampleIndicators"
-				  data-bs-slide-to={index}
-				  class={index === 0 ? "active" : ""}
-				  aria-current={index === 0 ? "true" : "false"}
-				  aria-label={`Slide ${index + 1}`}
-				></button>
-			  ))}
-			</div>
-  
-			<div class="carousel-inner">
-			  {images.map((image, index) => (
-				<div class={`carousel-item ${index === 0 ? "active" : ""}`}>
-				  <img src={image} class="d-block w-screen h-128 md:h-screen object-contain" alt={`Slide ${index + 1}`} loading="eager"/>
-				</div>
-			  ))}
-			</div>
-		  </div>
-  
-		  <!-- Horizontal Carousel -->
-		  <div id="carouselHorizontal" class="carousel slide mb-8 md:mb-16" data-bs-ride="carousel" data-bs-interval="3000">
-			<div class="carousel-indicators">
-			  {horizontalImages.map((_, index) => (
-				<button
-				  type="button"
-				  data-bs-target="#carouselHorizontal"
-				  data-bs-slide-to={index}
-				  class={index === 0 ? "active" : ""}
-				  aria-current={index === 0 ? "true" : "false"}
-				  aria-label={`Slide ${index + 1}`}
-				></button>
-			  ))}
-			</div>
-  
-			<div class="carousel-inner">
-			  {horizontalImages.map((image, index) => (
-				<div class={`carousel-item ${index === 0 ? "active" : ""}`}>
-				  <img src={image} class="d-block w-screen h-96 object-contain" alt={`Slide ${index + 1}`} loading="eager"/>
-				</div>
-			  ))}
-			</div>
-		  </div>
-		  <div class="container mx-auto py-16">
-			<h1 class="text-4xl font-bold mb-8 text-center hidden">Artwork</h1>
-	  
-			<FullscreenImageGrid client:load />
-		  </div>
-		</main>
-	  </div>
-	</body>
-  </html>
-</Layout>
+              <div class="carousel-inner">
+                {
+                  asfarImages.map((image, index) => (
+                    <div class={`carousel-item ${index === 0 ? "active" : ""}`}>
+                      <img
+                        src={image}
+                        class="d-block w-screen h-128 md:h-screen object-contain"
+                        alt={`Slide ${index + 1}`}
+                        loading="lazy"
+                      />
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
 
-<style>
-	body {
-	  font-family: 'Playfair Display', serif;
-	}
+            <!-- Carousel for Boek Images -->
+            <div
+              id="carouselBoek"
+              class="carousel slide mb-16 md:mb-32"
+              data-bs-ride="carousel"
+              data-bs-interval="3000"
+            >
+              <div class="carousel-indicators">
+                {
+                  boekImages.map((_, index) => (
+                    <button
+                      type="button"
+                      data-bs-target="#carouselBoek"
+                      data-bs-slide-to={index}
+                      class={index === 0 ? "active" : ""}
+                      aria-current={index === 0 ? "true" : "false"}
+                      aria-label={`Slide ${index + 1}`}
+                    />
+                  ))
+                }
+              </div>
+
+              <div class="carousel-inner">
+                {
+                  boekImages.map((image, index) => (
+                    <div class={`carousel-item ${index === 0 ? "active" : ""}`}>
+                      <img
+                        src={image}
+                        class="d-block w-screen h-128 md:h-screen object-contain"
+                        alt={`Slide ${index + 1}`}
+                        loading="lazy"
+                      />
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+
+            <!-- Carousel for I Know Images -->
+            <div
+              id="carouselIKnow"
+              class="carousel slide mb-16 md:mb-32"
+              data-bs-ride="carousel"
+              data-bs-interval="3000"
+            >
+              <div class="carousel-indicators">
+                {
+                  iknowImages.map((_, index) => (
+                    <button
+                      type="button"
+                      data-bs-target="#carouselIKnow"
+                      data-bs-slide-to={index}
+                      class={index === 0 ? "active" : ""}
+                      aria-current={index === 0 ? "true" : "false"}
+                      aria-label={`Slide ${index + 1}`}
+                    />
+                  ))
+                }
+              </div>
+
+              <div class="carousel-inner">
+                {
+                  iknowImages.map((image, index) => (
+                    <div class={`carousel-item ${index === 0 ? "active" : ""}`}>
+                      <img
+                        src={image}
+                        class="d-block w-screen h-128 md:h-screen object-contain"
+                        alt={`Slide ${index + 1}`}
+                        loading="lazy"
+                      />
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+
+            <!-- Carousel for Retelling Images -->
+            <div
+              id="carouselRetelling"
+              class="carousel slide mb-16 md:mb-32"
+              data-bs-ride="carousel"
+              data-bs-interval="3000"
+            >
+              <div class="carousel-indicators">
+                {
+                  retellingImages.map((_, index) => (
+                    <button
+                      type="button"
+                      data-bs-target="#carouselRetelling"
+                      data-bs-slide-to={index}
+                      class={index === 0 ? "active" : ""}
+                      aria-current={index === 0 ? "true" : "false"}
+                      aria-label={`Slide ${index + 1}`}
+                    />
+                  ))
+                }
+              </div>
+
+              <div class="carousel-inner">
+                {
+                  retellingImages.map((image, index) => (
+                    <div class={`carousel-item ${index === 0 ? "active" : ""}`}>
+                      <img
+                        src={image}
+                        class="d-block w-screen h-128 md:h-screen object-contain"
+                        alt={`Slide ${index + 1}`}
+                        loading="lazy"
+                      />
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+
+            <!-- Carousel for Lift Images -->
+            <div
+              id="carouselLift"
+              class="carousel slide mb-16 md:mb-32"
+              data-bs-ride="carousel"
+              data-bs-interval="3000"
+            >
+              <div class="carousel-indicators">
+                {
+                  liftImages.map((_, index) => (
+                    <button
+                      type="button"
+                      data-bs-target="#carouselLift"
+                      data-bs-slide-to={index}
+                      class={index === 0 ? "active" : ""}
+                      aria-current={index === 0 ? "true" : "false"}
+                      aria-label={`Slide ${index + 1}`}
+                    />
+                  ))
+                }
+              </div>
+
+              <div class="carousel-inner">
+                {
+                  liftImages.map((image, index) => (
+                    <div class={`carousel-item ${index === 0 ? "active" : ""}`}>
+                      <img
+                        src={image}
+                        class="d-block w-screen h-128 md:h-screen object-contain"
+                        alt={`Slide ${index + 1}`}
+                        loading="lazy"
+                      />
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+
+            <!-- Carousel for Plain Images -->
+            <div
+              id="carouselPlain"
+              class="carousel slide mb-16 md:mb-32"
+              data-bs-ride="carousel"
+              data-bs-interval="3000"
+            >
+              <div class="carousel-indicators">
+                {
+                  plainImages.map((_, index) => (
+                    <button
+                      type="button"
+                      data-bs-target="#carouselPlain"
+                      data-bs-slide-to={index}
+                      class={index === 0 ? "active" : ""}
+                      aria-current={index === 0 ? "true" : "false"}
+                      aria-label={`Slide ${index + 1}`}
+                    />
+                  ))
+                }
+              </div>
+
+              <div class="carousel-inner">
+                {
+                  plainImages.map((image, index) => (
+                    <div class={`carousel-item ${index === 0 ? "active" : ""}`}>
+                      <img
+                        src={image}
+                        class="d-block w-screen h-128 md:h-screen object-contain"
+                        alt={`Slide ${index + 1}`}
+                        loading="lazy"
+                      />
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+
+            <!-- Carousel for Plain2 Images
+          <div
+            id="carouselPlain2"
+            class="carousel slide mb-16 md:mb-32"
+            data-bs-ride="carousel"
+            data-bs-interval="3000"
+          >
+            <div class="carousel-indicators">
+              {
+                plain2Images.map((_, index) => (
+                  <button
+                    type="button"
+                    data-bs-target="#carouselPlain2"
+                    data-bs-slide-to={index}
+                    class={index === 0 ? "active" : ""}
+                    aria-current={index === 0 ? "true" : "false"}
+                    aria-label={`Slide ${index + 1}`}
+                  />
+                ))
+              }
+            </div>
+
+            <div class="carousel-inner">
+              {
+                plain2Images.map((image, index) => (
+                  <div class={`carousel-item ${index === 0 ? "active" : ""}`}>
+                    <img
+                      src={image}
+                      class="d-block w-screen h-128 md:h-screen object-contain"
+                      alt={`Slide ${index + 1}`}
+                      loading="lazy"
+                    />
+                  </div>
+                ))
+              }
+            </div>
+          </div> -->
+          </main>
+        </section>
+
+        <section id="cv" class="container mx-auto py-16">
+          <h1 class="text-4xl font-bold mb-8 text-center sr-only">CV</h1>
+          <body>
+            <div class="container mx-auto py-16">
+              <h1 class="text-4xl font-bold mb-8 text-center sr-only">CV</h1>
+
+              {/* Flex container for layout on larger screens */}
+              <div class="flex flex-col lg:flex-row">
+                {/* CV Section */}
+                <div class="lg:w-2/3">
+                  <section class="mb-12">
+                    <h2 class="text-2xl font-semibold mb-4">
+                      Selected Exhibitions
+                    </h2>
+                    <ul class="space-y-4">
+                      <li>
+                        <strong>2024</strong> - As far as I know, Galerie Gerhard
+                        Hofland, Amsterdam (NL), solo-show
+                      </li>
+                      <li>
+                        <strong>2024</strong> - Harvest 2024, Lakeside Collection,
+                        Depot Boijmans Van Beuningen, Rotterdam (NL), duoshow
+                      </li>
+                      <li>
+                        <strong>2024</strong> - Sample, Chili Art Projects, London
+                        (UK), groupshow
+                      </li>
+                      <li>
+                        <strong>2024</strong> - Last Show, Collectie de Groen, Arnhem
+                        (NL), groupshow
+                      </li>
+                      <li>
+                        <strong>2024</strong> - Daily encounters and how to catch
+                        them, Kunsthal Helmond, Museum Helmond, Helmond (NL), groupshow
+                      </li>
+                      <li>
+                        <strong>2024</strong> - Echter, Moving Gallery, Utrecht (NL),
+                        groupshow
+                      </li>
+                      <li>
+                        <strong>2024</strong> - Art Rotterdam, Best of Graduates
+                        Legacy, Galerie Ron Mandos, Rotterdam (NL), groupshow
+                      </li>
+                      <li>
+                        <strong>2024</strong> - Art Rotterdam, Represented by Galerie
+                        Gerhard Hofland, Rotterdam (NL), groupshow
+                      </li>
+                      <li>
+                        <strong>2023</strong> - Closing Distance, Galerie Weisbard,
+                        Rotterdam (NL), solo-show
+                      </li>
+                      <li>
+                        <strong>2023</strong> - Maidentrip, Collectie de Groen, Arnhem
+                        (NL), solo-show
+                      </li>
+                      <li>
+                        <strong>2023</strong> - Best of Graduates, Galerie Ron Mandos,
+                        Amsterdam (NL), groupshow
+                      </li>
+                      <li>
+                        <strong>2023</strong> - HKU Exposure, HKU Fine Art, Utrecht
+                        (NL), graduation show
+                      </li>
+                      <li>
+                        <strong>2023</strong> - PARTITIONS, Galerie Gerhard Hofland,
+                        Amsterdam (NL), duoshow
+                      </li>
+                      <li>
+                        <strong>2023</strong> - TRAILER, AG, Utrecht (NL), groupshow
+                      </li>
+                      <li>
+                        <strong>2023</strong> - A Touch of Light, Museum Kranenburgh,
+                        Bergen (NL), groupshow
+                      </li>
+                      <li>
+                        <strong>2022</strong> - PEEK Pastoe, HKU Fine Art, Utrecht
+                        (NL), groupshow
+                      </li>
+                      <li>
+                        <strong>2022</strong> - The NEXT: KapSalon, Herman van Veen
+                        Arts Center, Soest (NL), groupshow
+                      </li>
+                      <li>
+                        <strong>2021</strong> - CURRENT CURRENT CURRENT, OMSTAND,
+                        Arnhem (NL), groupshow
+                      </li>
+                      <li>
+                        <strong>2021</strong> - Virtual Empathy, AG, Utrecht (NL),
+                        groupshow
+                      </li>
+                    </ul>
+                  </section>
+
+                  {/* Education & Residencies Section */}
+                  <section class="mb-12">
+                    <h2 class="text-2xl font-semibold mb-4">
+                      Education/Residencies
+                    </h2>
+                    <ul class="space-y-4">
+                      <li>
+                        <strong>2019-2023</strong> - BA Fine Art, Hogeschool voor
+                        de Kunsten Utrecht
+                      </li>
+                      <li>
+                        <strong>2023-2024</strong> - Lakeside Collection Award, Artist-in-residence,
+                        Depot Boijmans Van Beuningen, Rotterdam
+                      </li>
+                      <li>
+                        <strong>2024-2026</strong> - Participant Residency Program,
+                        De Ateliers, Amsterdam (NL)
+                      </li>
+                    </ul>
+                  </section>
+
+                  {/* Media Section */}
+                  <section class="mb-12">
+                    <h2 class="text-2xl font-semibold mb-4">Selected Media</h2>
+                    <ul class="space-y-4">
+                      <li>
+                        <strong>10 juli 2023</strong> -
+                        <a
+                          href="https://www.volkskrant.nl/cultuur-media/net-afgestudeerd-en-nu-al-een-tentoonstelling-de-vliegende-start-van-drie-jonge-kunstenaars~b8201ff2e/"
+                          target="_blank"
+                          class="underline hover:text-blue-600"
+                        >
+                          'De vliegende start van drie jonge kunstenaars', Anna
+                          van Leeuwen, de Volkskrant
+                        </a>
+                      </li>
+                      <li>
+                        <strong>7 september 2024</strong> -
+                        <a
+                          href="https://www.parool.nl/ps/kunstenaar-caja-boogers-23-is-een-rijzende-ster-mensen-kunnen-mijn-grote-plannen-voor-arrogantie-houden~b94de3db/"
+                          target="_blank"
+                          class="underline hover:text-blue-600"
+                        >
+                          'Kunstenaar Caja Boogers (23) is een rijzende ster',
+                          Jan Pieter Ekker, PS Het Parool
+                        </a>
+                      </li>
+                      <li>
+                        <strong>8 september 2024</strong> -
+                        <a
+                          href="https://www.volkskrant.nl/cultuur-media/caja-boogers-peutert-aan-het-indische-verleden-met-92-schilderijen~bebde12f/"
+                          target="_blank"
+                          class="underline hover:text-blue-600"
+                        >
+                          'Caja Boogers peutert aan het Indische verleden met 92
+                          schilderijen', Esmee Potsma, De Volkskrant
+                        </a>
+                      </li>
+                      <li>
+                        <strong>16 september 2024</strong> -
+                        <a
+                          href="https://www.frieze.com/article/caja-boogers-gerhard-hofland-2024-review"
+                          target="_blank"
+                          class="underline hover:text-blue-600"
+                        >
+                          'Caja Boogers's Fragments of Unspoken Memories', Jim
+                          van Geel, Frieze Magazine
+                        </a>
+                      </li>
+                    </ul>
+                  </section>
+
+                  {/* Collections Section */}
+                  <section class="mb-12">
+                    <h2 class="text-2xl font-semibold mb-4">
+                      Selected Collections
+                    </h2>
+                    <ul class="list-disc list-inside">
+                      <li>Ministerie van Binnenlandse Zaken</li>
+                      <li>Museum Voorlinden</li>
+                      <li>Lakeside Collection</li>
+                      <li>ING Collection</li>
+                      <li>Akzo Nobel Art Foundation</li>
+                      <li>Collectie de Groen</li>
+                      <li>FENIX Collection</li>
+                    </ul>
+                  </section>
+                </div>
+
+                {/* Image Section */}
+                <div class="lg:w-1/3 lg:pl-8 mt-8 lg:mt-0">
+                  <img
+                    src="https://utfs.io/f/eySWb67X0LypKwFSdsVSNOs8z3nexXov4D2rtG6Hqa5MpAc1"
+                    alt="Artwork of Caja Boogers"
+                    class="w-full h-auto object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </body>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="container mx-auto py-16">
+          <h1 class="text-4xl font-bold mb-8 text-center">Contact</h1>
+
+          <form
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST"
+            class="max-w-lg mx-auto space-y-4"
+          >
+            <!-- Name Field -->
+            <div>
+              <label for="name" class="block text-sm font-semibold">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="w-full px-4 py-2 border border-gray-300 rounded"
+                required
+              />
+            </div>
+
+            <!-- Email Field -->
+            <div>
+              <label for="email" class="block text-sm font-semibold"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="_replyto"
+                class="w-full px-4 py-2 border border-gray-300 rounded"
+                required
+              />
+            </div>
+
+            <!-- Subject Field -->
+            <div>
+              <label for="subject" class="block text-sm font-semibold"
+                >Subject</label
+              >
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                class="w-full px-4 py-2 border border-gray-300 rounded"
+                required
+              />
+            </div>
+
+            <!-- Message Field -->
+            <div>
+              <label for="message" class="block text-sm font-semibold"
+                >Message</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                class="w-full px-4 py-2 border border-gray-300 rounded"
+                required></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button
+              type="submit"
+              class="w-full bg-black text-white py-2 rounded hover:bg-gray-800"
+              >Send Message</button
+            >
+          </form>
+        </section>
+      </div>
+    </body>
+  </Layout>
+
+  <style>
+    body {
+      font-family: "Playfair Display", serif;
+    }
   </style>
+
+
+</html>
