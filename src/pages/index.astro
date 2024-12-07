@@ -1,67 +1,46 @@
 ---
-import FullscreenImageGrid from "../components/FullscreenImageGrid";
 import Layout from "../layouts/Layout.astro";
-
-//oude images
-const images = [
-  "https://utfs.io/f/eySWb67X0Lyp06tqAKOoFskcentRjDfzZqm5SpiNC1uWL8KO",
-  "https://utfs.io/f/eySWb67X0Lypz9OB5oPCaF8RvUCB0tN634gbfqj7HMh1AGle",
-  "https://utfs.io/f/eySWb67X0Lyp06tqAKOoFskcentRjDfzZqm5SpiNC1uWL8KO",
-  "https://utfs.io/f/eySWb67X0LypP7DfzRvuMfsP9meCikWV7y4zE362LJuwB1Gr",
-  "https://utfs.io/f/eySWb67X0LypJaPGauNB2PFycf69kAahM1C3nHv5OS0EGZgU",
-  "https://utfs.io/f/eySWb67X0Lyp9YInoDVaARJtPO80QKBriNSybFDG6vcoeqHY",
-  "https://utfs.io/f/eySWb67X0Lyp6lq5PtkicNopfLslVa40TIF7YGeuC53mrjAb",
-];
-const horizontalImages = [
-  "https://utfs.io/f/eySWb67X0Lypz93Vr7UCaF8RvUCB0tN634gbfqj7HMh1AGle",
-  "https://utfs.io/f/eySWb67X0Lyp5FT5uqR2cnSmpy6Z0zvF1gkUTRWjtPAJq3eL",
-  "https://utfs.io/f/eySWb67X0LypBZYYePqLxQ1WI7oSb5K2gjftRFvrwceZp04A",
-  "https://utfs.io/f/eySWb67X0LypjhASZh8nw1XaegZqAUHVMdKl8cvCm2I0hzDE",
-  "https://utfs.io/f/eySWb67X0LypLA9v38En8VDKUXhIWk07SMraAEjvOGwtLlcC",
-  "https://utfs.io/f/eySWb67X0LypMn0rk8SBzOhsCAbi4jtNuIvaeqSkW3cGLVMr",
-];
 
 // nieuwe images
 const asfarImages = [
-  "https://utfs.io/f/6qqAt6GVvZygiqrrbM5ZmRvX4W3kcCnufVOJYyGNi7DoBIMp",
-  "https://utfs.io/f/6qqAt6GVvZygCoSWZlf4qvxgdmUFH8aw21WZLyzpoSkrenl9",
-  "https://utfs.io/f/6qqAt6GVvZygTptSqkizBYGTov7s6kZ1X9QhaRUCfgMNetDH",
+  "https://utfs.io/f/Q8NXZoCPTWFle8inOLAIjEHAWQKzBZlnXFi8Jhgebt2DuOVP",
+  "https://utfs.io/f/Q8NXZoCPTWFltedRyKxavf0NyDGlk4EJVRrq5esnTbXw2F8t",
+  "https://utfs.io/f/Q8NXZoCPTWFligS8XB5oH839lMtOVK1xCRBDriJeYj6v2EFI",
 ];
 
 const boekImages = [
-  "https://utfs.io/f/6qqAt6GVvZyg8EI8jITEDBgkQpqRIHyJAMt318cvhPGxnF56",
-  "https://utfs.io/f/6qqAt6GVvZygSEwlZP6aauPM19Nl8mUzQOJdRBD0ctiW5fAF",
-  "https://utfs.io/f/6qqAt6GVvZygZfvExAD7kG9NXfaBv6PJA1mnQceLb5MiTSsp",
-  "https://utfs.io/f/6qqAt6GVvZygdiqtcmj8Zk5IfPE2gl1U6M8spmQV7bhScyG4",
-  "https://utfs.io/f/6qqAt6GVvZygFr6VTQdkjfs4iYZGvSTEX71pPNFtxohRQarB",
-  "https://utfs.io/f/6qqAt6GVvZygeyOZiKwSyKFj56kqm4oUPQJLZ3Rc2u0MA1GN",
+  "https://utfs.io/f/Q8NXZoCPTWFltEU0MFhxavf0NyDGlk4EJVRrq5esnTbXw2F8",
+  "https://utfs.io/f/Q8NXZoCPTWFltEU0MFhxavf0NyDGlk4EJVRrq5esnTbXw2F8",
+  "https://utfs.io/f/Q8NXZoCPTWFlbzh1wSHdP43tN0UqBXTM85EIxzp9JHCiGZh6",
+  "https://utfs.io/f/Q8NXZoCPTWFlOt9G3YP29NICB61HW8ysjgL0Yl4AbzueTQhP",
+  "https://utfs.io/f/Q8NXZoCPTWFlcppiwlegZRCjh9sx07twQa8Xo6SeGVMY4upB",
+  "https://utfs.io/f/Q8NXZoCPTWFlwjrojwS1qNW8yAcVDxvd0jS2bZRsYpiwBnTh",
 ];
 
 const iknowImages = [
-  "https://utfs.io/f/6qqAt6GVvZygndRxoBXAzdK0e2LD15yFh9BCXcT4NH7a6O3E",
-  "https://utfs.io/f/6qqAt6GVvZygDsS94qIOSBclqUjyhYKCri3kfab6gFGLRxwH",
-  "https://utfs.io/f/6qqAt6GVvZygGYhhZzVARfdQICqZj6lWOzF5gDmo90VKSN3e",
-  "https://utfs.io/f/6qqAt6GVvZyger1I8vhwSyKFj56kqm4oUPQJLZ3Rc2u0MA1G",
+  "https://utfs.io/f/Q8NXZoCPTWFlSLyomuetgHGqZRAfFvCWT0U841sJj52MDexa",
+  "https://utfs.io/f/Q8NXZoCPTWFlfGQ6pfn9nD6oVrWE4bqzhsIwC7YjG0P1SKlA",
+  "https://utfs.io/f/Q8NXZoCPTWFllz6FdQjwQ3ydYcz4OEbeF2Jf8ltKL1Whoiag",
+  "https://utfs.io/f/Q8NXZoCPTWFlivnGiD5oH839lMtOVK1xCRBDriJeYj6v2EFI",
 ];
 
 const retellingImages = [
-  "https://utfs.io/f/6qqAt6GVvZygetg082wSyKFj56kqm4oUPQJLZ3Rc2u0MA1GN",
-  "https://utfs.io/f/6qqAt6GVvZygVfKKEkUcVgpWOjbQkLizS8R4CyUxZPaX7Kcd",
+  "https://utfs.io/f/Q8NXZoCPTWFldaRfTMu6fYqRJmkesMrQ3NXI17Tzg5ywtZuE",
+  "https://utfs.io/f/Q8NXZoCPTWFlq0CtW0MfOEt1bWAsPZz8QSyfI20qnYke4rFM",
 ];
 
 const liftImages = [
-  "https://utfs.io/f/6qqAt6GVvZygJxc357SuMbxeGYpwID3oLTEOigWZ6XtyrF0K",
-  "https://utfs.io/f/6qqAt6GVvZygDr3643qIOSBclqUjyhYKCri3kfab6gFGLRxw",
-  "https://utfs.io/f/6qqAt6GVvZygFY7WUadkjfs4iYZGvSTEX71pPNFtxohRQarB",
-  "https://utfs.io/f/6qqAt6GVvZyg8ZiQkg5TEDBgkQpqRIHyJAMt318cvhPGxnF5",
+  "https://utfs.io/f/Q8NXZoCPTWFl8ZmW90diJy2CmjoaWwbBsMZvR1z5cQNFki79",
+  "https://utfs.io/f/Q8NXZoCPTWFlz2g1vo8Do35haA2WYg0Sjqt4eQ8XHP7BvrnE",
+  "https://utfs.io/f/Q8NXZoCPTWFlxJ8EAGQLcdiXSuBfDG6osFZvazqWIh0PbHLU",
+  "https://utfs.io/f/Q8NXZoCPTWFlFh1dvOjm9T7bP4uGaq2ckKBMRw8LpnOEYZVX",
 ];
 
 const plainImages = [
-  "https://utfs.io/f/6qqAt6GVvZyg7GKLHDPhLSlV2tZGfDOnIEKF7dWB14HgubJQ",
-  "https://utfs.io/f/6qqAt6GVvZygnhoIwWXAzdK0e2LD15yFh9BCXcT4NH7a6O3E",
+  "https://utfs.io/f/Q8NXZoCPTWFlwZhNv2S1qNW8yAcVDxvd0jS2bZRsYpiwBnTh",
+  "https://utfs.io/f/Q8NXZoCPTWFlDnraubeViC5Yke8jBlcQvWrVh72F9DH3xN6G",
+  "https://utfs.io/f/Q8NXZoCPTWFluVVX80czoDRVqQxZ5CEwzNW1eGYnBPsLl2UK",
 ];
-
-const plain2Images = [];
 ---
 
 <html lang="en">
@@ -111,7 +90,6 @@ const plain2Images = [];
                         src={image}
                         class="d-block w-screen h-128 md:h-screen object-contain"
                         alt={`Slide ${index + 1}`}
-                        loading="lazy"
                       />
                     </div>
                   ))
@@ -164,7 +142,6 @@ const plain2Images = [];
                         src={image}
                         class="d-block w-screen h-128 md:h-screen object-contain"
                         alt={`Slide ${index + 1}`}
-                        loading="lazy"
                       />
                     </div>
                   ))
@@ -217,7 +194,6 @@ const plain2Images = [];
                         src={image}
                         class="d-block w-screen h-128 md:h-screen object-contain"
                         alt={`Slide ${index + 1}`}
-                        loading="lazy"
                       />
                     </div>
                   ))
@@ -270,7 +246,6 @@ const plain2Images = [];
                         src={image}
                         class="d-block w-screen h-128 md:h-screen object-contain"
                         alt={`Slide ${index + 1}`}
-                        loading="lazy"
                       />
                     </div>
                   ))
@@ -323,7 +298,6 @@ const plain2Images = [];
                         src={image}
                         class="d-block w-screen h-128 md:h-screen object-contain"
                         alt={`Slide ${index + 1}`}
-                        loading="lazy"
                       />
                     </div>
                   ))
@@ -376,7 +350,6 @@ const plain2Images = [];
                         src={image}
                         class="d-block w-screen h-128 md:h-screen object-contain"
                         alt={`Slide ${index + 1}`}
-                        loading="lazy"
                       />
                     </div>
                   ))
@@ -591,7 +564,7 @@ const plain2Images = [];
                 {/* Image Section */}
                 <div class="lg:w-1/3 lg:pl-8 mt-8 lg:mt-0">
                   <img
-                    src="https://utfs.io/f/eySWb67X0LypKwFSdsVSNOs8z3nexXov4D2rtG6Hqa5MpAc1"
+                    src="https://utfs.io/f/6qqAt6GVvZygwFazy8siSawy1B0MFtv2ZkxCuo4n3AlIDsOW"
                     alt="Artwork of Caja Boogers"
                     class="w-full h-auto object-cover"
                   />
@@ -605,71 +578,14 @@ const plain2Images = [];
         <section id="contact" class="container mx-auto py-16">
           <h1 class="text-4xl font-bold mb-8 text-center">Contact</h1>
 
-          <form
-            action="https://formspree.io/f/YOUR_FORM_ID"
-            method="POST"
-            class="max-w-lg mx-auto space-y-4"
-          >
-            <!-- Name Field -->
-            <div>
-              <label for="name" class="block text-sm font-semibold">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                class="w-full px-4 py-2 border border-gray-300 rounded"
-                required
-              />
-            </div>
-
-            <!-- Email Field -->
-            <div>
-              <label for="email" class="block text-sm font-semibold"
-                >Email</label
-              >
-              <input
-                type="email"
-                id="email"
-                name="_replyto"
-                class="w-full px-4 py-2 border border-gray-300 rounded"
-                required
-              />
-            </div>
-
-            <!-- Subject Field -->
-            <div>
-              <label for="subject" class="block text-sm font-semibold"
-                >Subject</label
-              >
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                class="w-full px-4 py-2 border border-gray-300 rounded"
-                required
-              />
-            </div>
-
-            <!-- Message Field -->
-            <div>
-              <label for="message" class="block text-sm font-semibold"
-                >Message</label
-              >
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                class="w-full px-4 py-2 border border-gray-300 rounded"
-                required></textarea>
-            </div>
-
-            <!-- Submit Button -->
+          <div class="max-w-lg mx-auto text-center">
             <button
-              type="submit"
+              onclick="window.location.href='mailto:info@cajaboogers.com';"
               class="w-full bg-black text-white py-2 rounded hover:bg-gray-800"
-              >Send Message</button
             >
-          </form>
+              Send an email
+            </button>
+          </div>
         </section>
       </div>
     </body>

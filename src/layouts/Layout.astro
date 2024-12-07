@@ -5,10 +5,6 @@ interface Props {
   title: string;
 }
 
-const location = useLocation();
-
-const { pathname } = new URL(Astro.request.url);
-const isHomePage = pathname === "/";
 const { title } = Astro.props;
 ---
 
@@ -36,9 +32,6 @@ const { title } = Astro.props;
         }
       </a>
       <div class="flex items-center space-x-4">
-        <!-- <a href="/work" class="hover:underline">
-				  Work
-				</a> -->
         <a href="#cv" class="hover:underline"> CV </a>
         <a href="#contact" class="hover:underline"> Contact </a>
         <a
